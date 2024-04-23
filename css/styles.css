@@ -63,7 +63,7 @@ ul {
 }
 .header .landing {
     position: absolute;
-    top: 0;
+    top: -100px;
     left: 0;
     width: 100%;
     height: 800px;
@@ -72,24 +72,32 @@ ul {
 }
 .header .sky {
     position: absolute;
-    bottom: -7px;
+    bottom: 12%;
     z-index: -1;
 }
 .header .sky img {
     max-width: 100%;
+}
+.navbar-main {
+    position: fixed;
+    width: 100vw;
+    right: 0;
+    top: 0;
 }
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    width: 1110px;
+    margin: 0 auto;
+    color: white;
 }
 .navbar .logo {
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
     width: 194px;
 }
 .navbar .logo .fa-connectdevelop {
@@ -108,15 +116,19 @@ ul {
 .navbar .nav .main-nav {
     display: flex;
 }
+@media (max-width:1200px) {
+    .navbar {
+        width: calc(100% - 120px);
+    }
+}
 .navbar .nav .main-nav li {
     padding: 10px 20px;
 }
 .navbar .nav .main-nav li a {
-    color: white;
     font-weight: 600;
+    color: inherit;
 }
 .navbar .bar .fa-bars {
-    color: white;
     font-size: 28px;
     display: none;
 }
@@ -193,6 +205,9 @@ ul {
     .header .content {
         flex-direction: column;
         align-items: center;
+    }
+    .navbar {
+        width: calc(100% - 60px);
     }
     .navbar .nav {
         display: none;
