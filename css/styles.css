@@ -136,15 +136,61 @@ ul {
     }
 }
 .navbar .nav .main-nav li {
+    position: relative;
     padding: 10px 20px;
+}
+.navbar .nav .main-nav li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color:#3e57d0;
+    top: -16px;
+    left: 0;
+    transition: .3s;
+}
+.navbar .nav .main-nav li:hover::before {
+    width: 100%;
 }
 .navbar .nav .main-nav li a {
     font-weight: 600;
     color: inherit;
 }
+.navbar .bar {
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+.navbar .bar .list-menu {
+    position: absolute;
+    top: 49.1px;
+    right: 0;
+    width: calc(100vw - 60px);
+    background-color: white;
+    color: black;
+    box-shadow: 5px 7px 15px 2px rgba(82, 90, 101, 0.12);
+    transform: rotateX(90deg);
+    transform-origin: 0% 0%;
+    transition: .5s;
+}
+.navbar .bar:hover .list-menu {
+    transform: rotateX(0deg);
+}
+.navbar .bar .list-menu ul {
+
+}
+
+.navbar .bar .list-menu ul li {
+    padding: 12px 20px;
+    border-top: .3px solid #2dbcdc2d;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .bar .list-menu ul li i {
+    font-size: 12px;
+}
 .navbar .bar .fa-bars {
     font-size: 28px;
-    display: none;
 }
 
 .header .content {
@@ -247,7 +293,7 @@ ul {
     div.social {
         justify-content: center;
     }
-    .navbar .bar .fa-bars {
+    .navbar .bar {
         display: block;
     }
     .header .content .content-text .service-contact button {
@@ -268,10 +314,14 @@ ul {
     min-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px 30px;
     padding: 35px 30px;
     border-radius: 5px;
     box-shadow: 5px 7px 15px 2px rgba(82, 90, 101, 0.12);
+    transition: .3s;
+}
+.services .services-boxs .service-box:hover {
+    transform: translateY(-10px);
 }
 @media (max-width:400px) {
     .services .services-boxs .service-box {
@@ -370,6 +420,10 @@ ul {
     padding: 30px 25px 30px 50px;
     border-radius: 5px;
     box-shadow: 5px 7px 15px 2px rgba(82, 90, 101, 0.12);
+    transition: .3s;
+}
+.philosophie .philosophie-boxs .philo-box:hover {
+    transform: translateY(-10px);
 }
 .philosophie .philosophie-boxs .philo-box .icon {
     position: absolute;
